@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyaz Eşya Teknik Servis | Hızlı ve Garantili Tamir</title>
+  <meta name="description" content="Beyaz eşya tamiri için hızlı, güvenilir ve yerinde servis. Çamaşır makinesi, bulaşık makinesi, buzdolabı, fırın ve klima tamiri. Hemen ara veya WhatsApp'tan yaz!"/>
+  <meta name="theme-color" content="#e30613"/>
+
+  <style>
+    :root{
+      --primary:#e30613; /* Ana kırmızı */
+      --primary-600:#c70511;
+      --bg:#ffffff;
+      --text:#1f2937; /* slate-800 */
+      --muted:#6b7280; /* slate-500 */
+      --card:#ffffff;
+      --border:#e5e7eb; /* gray-200 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{width:min(1100px, 92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand .logo{width:42px;height:42px;border-radius:12px;background:var(--primary);display:grid;place-items:center;color:#fff;font-weight:900}
+    .nav-links{display:flex;gap:18px;font-weight:600}
+    .nav-links a{padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{background:#f9fafb}
+    .cta{display:flex;gap:10px;align-items:center}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);font-weight:700;cursor:pointer;transition:transform .06s ease, box-shadow .2s ease, background .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn-primary:hover{background:var(--primary-600)}
+    .btn-ghost{background:#fff}
+
+    /* Hero */
+    .hero{padding:56px 0 24px;background:linear-gradient(180deg, rgba(227,6,19,.06), transparent 70%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+    .kicker{color:var(--primary);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    h1{font-size:clamp(28px, 4.2vw, 44px);line-height:1.15;margin:10px 0 8px}
+    .subtitle{font-size:clamp(16px, 2.2vw, 18px);color:var(--muted);margin-bottom:20px}
+    .hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+    .hero-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 16px}
+
+    /* Sections */
+    section{padding:40px 0;border-top:1px solid var(--border)}
+    .section-title{font-size:26px;margin:0 0 14px}
+    .muted{color:var(--muted)}
+
+    /* Services */
+    .grid{display:grid;gap:16px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .card h3{margin:6px 0 8px}
+    .badge{display:inline-block;background:#fee2e2;color:#991b1b;border:1px solid #fecaca;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+    .list{margin:8px 0 0;padding-left:18px}
+
+    /* Why us */
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .feature{border:1px dashed var(--border);border-radius:16px;padding:14px;background:#fff}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    blockquote{margin:0}
+    .stars{letter-spacing:2px}
+
+    /* FAQ */
+    details{border:1px solid var(--border);border-radius:14px;padding:12px 14px;background:#fff}
+    details+details{margin-top:10px}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .info-list{list-style:none;margin:0;padding:0}
+    .info-list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border)}
+
+    /* Footer */
+    footer{padding:26px 0;background:#0b0b0b;color:#f3f4f6;margin-top:30px}
+
+    /* Floating action */
+    .fab{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:60}
+    .fab a{box-shadow:0 10px 20px rgba(0,0,0,.18)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid,.contact{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .grid-3,.testimonials{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .features{grid-template-columns:1fr}
+      .grid-3,.testimonials{grid-template-columns:1fr}
+      .hero-cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Üst Menü -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Beyaz Eşya Teknik Servis Ana Sayfa">
+        <div class="logo" aria-hidden="true">ERT</div>
+        <div>
+          <div>Ertan Teknik Servis</div>
+          <small class="muted">Beyaz Eşya Tamiri</small>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#neden-biz">Neden Biz?</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+      <div class="cta">
+        <!-- Telefon numaranızı aşağıdaki tel: linkine yazın -->
+        <a class="btn btn-ghost" href="tel:+905510140473" aria-label="Hemen Ara">📞 Hemen Ara</a>
+        <!-- WhatsApp numaranızı 90 ile başlayacak şekilde güncelleyin -->
+        <a class="btn btn-primary" href="https://wa.me/905510140473" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">💬 WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Bölümü -->
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker">Garantili & Hızlı Çözüm</div>
+        <h1>Çamaşır, Bulaşık, Buzdolabı ve <br/>Tüm Beyaz Eşyalarda Uzman Tamir</h1>
+        <p class="subtitle">Aynı gün servis, orijinal yedek parça ve net fiyat politikası. Konumunuza en yakın teknik servis desteği.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="tel:+905510140473">📞 Hemen Ara</a>
+          <a class="btn" href="#hizmetler">Hizmetleri Gör</a>
+        </div>
+        <div class="hero-cards">
+          <div class="hero-card"><span class="badge">Aynı Gün</span><div><strong>Hızlı müdahale</strong> – Randevusuz destek.</div></div>
+          <div class="hero-card"><span class="badge">Garanti</span><div>Tamirlerde <strong>işçilik garantisi</strong>.</div></div>
+          <div class="hero-card"><span class="badge">Şeffaf</span><div><strong>Önceden fiyat</strong> bilgilendirmesi.</div></div>
+          <div class="hero-card"><span class="badge">Uzman</span><div>Marka bağımsız <strong>usta ekip</strong>.</div></div>
+        </div>
+      </div>
+      <div>
+        <picture>
+            <img src="teknik-servis-beyaz-esya (1).jpg"Teknik servis personeli beyaz eşya tamiri yapıyor" loading="lazy" />
+        </picture>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hizmetler -->
+  <section id="hizmetler">
+    <div class="container">
+      <h2 class="section-title">Hizmetler</h2>
+      <p class="muted">Arıza tespiti, yerinde onarım ve periyodik bakım hizmetleri.</p>
+      <div class="grid grid-3" style="margin-top:12px">
+        <article class="card">
+          <h3>Çamaşır Makinesi Tamiri</h3>
+          <ul class="list">
+            <li>Su almama, sıkma ve gürültü sorunları</li>
+            <li>Pompa, rezistans, rulman değişimi</li>
+            <li>Filtre ve tahliye bakımı</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Bulaşık Makinesi Tamiri</h3>
+          <ul class="list">
+            <li>Yıkamama, su kaçırma, ısıtma sorunları</li>
+            <li>Devirdaim, rezistans ve kart arızaları</li>
+            <li>Periyodik bakım ve kireç temizliği</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Buzdolabı Tamiri</h3>
+          <ul class="list">
+            <li>Soğutmama, aşırı buzlanma</li>
+            <li>Termostat, fan, sensör arızaları</li>
+            <li>Kapak fitili değişimi ve bakım</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Fırın & Set Üstü</h3>
+          <ul class="list">
+            <li>Isınmama ve dengesiz pişirme</li>
+            <li>Rezistans, termostat değişimi</li>
+            <li>Gaz kaçağı kontrolü</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Kurutma Makinesi Tamiri</h3>
+          <ul class="list">
+            <li>Kurutma Sorunu</li>
+            <li>Ses Sorunu</li>
+            <li>Genel bakım ve performans testi</li>
+          </ul>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Neden Biz -->
+  <section id="neden-biz">
+    <div class="container">
+      <h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+      <div class="features">
+        <div class="feature"><strong>1 yıl işçilik garantisi*</strong><br/><span class="muted">*Parça garanti süresi markaya göre değişir.</span></div>
+        <div class="feature"><strong>Aynı gün servis</strong><br/><span class="muted">Yoğunluğa göre en hızlı ziyaret.</span></div>
+       </span></div>
+        </span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yorumlar -->
+  <section id="yorumlar">
+    <div class="container">
+      <h2 class="section-title">Müşteri Yorumları</h2>
+      <div class="testimonials">
+        <article class="card">
+          <blockquote>“Buzdolabım aynı gün içinde onarıldı. Usta çok ilgiliydi.”</blockquote>
+          <div class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+          <small class="muted">Ayşe K.</small>
+        </article>
+        <article class="card">
+          <blockquote>“Net fiyat söylediler, sürpriz olmadı. Tavsiye ederim.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <small class="muted">Mehmet D.</small>
+        </article>
+        <article class="card">
+          <blockquote>“Çamaşır makinesinin rulmanlarını profesyonelce değiştirdiler.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <small class="muted">Zeynep T.</small>
+        </article>
+      </div>
+
+      <!-- Basit yorum formu (statik) -->
+      <div class="card" style="margin-top:16px">
+        <h3>Yorum Bırakın</h3>
+        <form action="https://wa.me/90510140473" method="get">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <label>Ad Soyad<br/>
+              <input name="ad" required placeholder="Adınız" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px" />
+            </label>
+            <label>Değerlendirme<br/>
+              <select name="puan" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px">
+                <option>★★★★★</option><option>★★★★☆</option><option>★★★☆☆</option><option>★★☆☆☆</option><option>★☆☆☆☆</option>
+              </select>
+            </label>
+          </div>
+          <label style="display:block;margin-top:10px">Mesajınız<br/>
+            <textarea name="text" rows="4" placeholder="Deneyiminizi kısaca yazın" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px"></textarea>
+          </label>
+          <button class="btn btn-primary" style="margin-top:10px" type="submit">WhatsApp ile Gönder</button>
+          <p class="muted" style="margin-top:6px">Form, mesajınızı WhatsApp üzerinden iletir. Numaranızı güncellemeyi unutmayın.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section id="iletisim">
+    <div class="container contact">
+      <div>
+        <h2 class="section-title">İletişim</h2>
+        <ul class="info-list">
+          <li>📞 <strong>Telefon:</strong> <a href="tel:+905510140473">+90 551 014 04 73</a></li>
+          <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/905510140473" target="_blank" rel="noopener">Mesaj gönder</a></li>
+          <li>📧 <strong>E‑posta:</strong> <a href="mailto:kadirertan1919@gmail.com">kadirertan1919@gmail.com</a></li>
+          <li>📍 <strong>Adres:</strong> KOCAELİ,TÜRKİYE <span class="muted">(Barış mah. Dr. Zeki Acar cad.)</span></li>
+          <li>🕒 <strong>Çalışma Saatleri:</strong> Pazartesi–Cumartesi 09:00–20:00</li>
+        </ul>
+        <div class="card" style="margin-top:12px">
+          <h3>Servis Bölgeleri</h3>
+          <p class="muted">GEBZE,DARICA,ÇAYIROVA</p>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>© <span id="yil"></span> Beyaz Eşya Teknik Servis. Tüm hakları saklıdır.</div>
+      <div class="muted">Marka isimleri ilgili sahiplerine aittir.</div>
+    </div>
+  </footer>
+
+  <!-- Hızlı erişim butonları -->
+  <div class="fab" aria-label="Hızlı iletişim">
+    <a class="btn btn-primary" href="tel:+905510140473">📞 Ara</a>
+    <a class="btn" style="background:#25D366;color:#fff;border-color:#25D366" href="https://wa.me/905510140473" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <!-- SEO: Yapılandırılmış veri (doldurun) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Beyaz Eşya Teknik Servis",
+    "telephone": "+90 551 014 04 73",
+    "areaServed": "İstanbul",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "openingHours": ["Mo-Sa 09:00-20:00"],
+    "url": "https://ornek-site.com"
+  }
+  </script>
+
+  <script>
+    // Yıl otomatik
+    document.getElementById('yil').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
